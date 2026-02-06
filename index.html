@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Valentine Emergency Notice 🚨</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff4e8a, #ffb6c1);
+      text-align: center;
+      padding: 60px;
+      color: white;
+    }
+
+    .card {
+      background: white;
+      color: #333;
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      font-size: 32px;
+    }
+
+    button {
+      padding: 15px 25px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: none;
+      background: #ff4e8a;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ff2f70;
+    }
+
+    #hidden {
+      display: none;
+      margin-top: 20px;
+      font-size: 22px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>💌 Valentine Alert</h1>
+  <p>This message is for one (1) extremely lonely human.</p>
+
+  <button onclick="showMessage()">Open Message</button>
+
+  <div id="hidden">
+    🚨 Stop being lonely.  
+    This is your official Valentine intervention.  
+    Go text someone. Touch grass. Drink water.  
+    And remember — you are legally required to be less dramatic today. 😌
+  </div>
+</div>
+
+<script>
+function showMessage() {
+  document.getElementById("hidden").style.display = "block";
+}
+</script>
+
+</body>
+</html>
