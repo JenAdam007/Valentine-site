@@ -1,48 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Valentine Emergency Notice 🚨</title>
+  <title>Critical Status Report 🚨</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #ff4e8a, #ffb6c1);
-      text-align: center;
-      padding: 60px;
+      background: linear-gradient(135deg, #0f172a, #1f2937);
       color: white;
+      text-align: center;
+      padding: 50px;
     }
 
     .card {
-      background: white;
-      color: #333;
-      padding: 40px;
+      background: #111827;
       border-radius: 20px;
-      max-width: 600px;
+      padding: 40px;
+      max-width: 700px;
       margin: auto;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.7);
     }
 
     h1 {
-      font-size: 32px;
+      color: #38bdf8;
+      font-size: 34px;
     }
 
     button {
-      padding: 15px 25px;
+      padding: 15px 28px;
       font-size: 18px;
-      border-radius: 10px;
+      border-radius: 12px;
       border: none;
-      background: #ff4e8a;
-      color: white;
+      background: #38bdf8;
+      color: black;
       cursor: pointer;
+      font-weight: bold;
     }
 
     button:hover {
-      background: #ff2f70;
+      background: #0ea5e9;
     }
 
     #hidden {
       display: none;
-      margin-top: 20px;
+      margin-top: 25px;
       font-size: 22px;
+      line-height: 1.6;
+    }
+
+    .meter {
+      background: #374151;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 30px;
+      margin: 20px 0;
+    }
+
+    .meter-bar {
+      height: 100%;
+      width: 82%;
+      background: #ef4444;
+      text-align: right;
+      padding-right: 10px;
+      line-height: 30px;
+      font-weight: bold;
+    }
+
+    img {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 420px;
+      border-radius: 12px;
+    }
+
+    .countdown {
+      font-size: 26px;
+      color: #22c55e;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -50,22 +84,54 @@
 <body>
 
 <div class="card">
-  <h1>💌 Valentine Alert</h1>
-  <p>This message is for one (1) extremely lonely human.</p>
+  <h1>🚨 LONELINESS STATUS REPORT</h1>
 
-  <button onclick="showMessage()">Open Message</button>
+  <p>Scanning subject: <b>AHMED</b></p>
+
+  <button onclick="showMessage()">Open Diagnostic Results</button>
 
   <div id="hidden">
-    🚨 Stop being lonely.  
-    This is your official Valentine intervention.  
-    Go text someone. Touch grass. Drink water.  
-    And remember — you are legally required to be less dramatic today. 😌
+
+    ⚠️ Complaint levels rising…<br>
+    Probability of “no one texted me” message: VERY HIGH<br><br>
+
+    ✅ Intervention approved.<br>
+    I will take you for a milkshake BEFORE you start complaining.<br>
+    Please remain calm and dramatic in moderation.<br><br>
+
+    <b>Lonely Meter:</b>
+
+    <div class="meter">
+      <div class="meter-bar">82% Critical</div>
+    </div>
+
+    Milkshake arrival countdown:
+
+    <div class="countdown" id="timer"></div>
+
+    <img src="https://i.imgflip.com/1bij.jpg" alt="funny meme">
+
   </div>
 </div>
 
 <script>
 function showMessage() {
   document.getElementById("hidden").style.display = "block";
+  startCountdown();
+}
+
+function startCountdown() {
+  let seconds = 10;
+  const el = document.getElementById("timer");
+
+  const interval = setInterval(() => {
+    el.innerHTML = seconds + " seconds";
+    seconds--;
+    if (seconds < 0) {
+      clearInterval(interval);
+      el.innerHTML = "MILKSHAKE TIME 🥤";
+    }
+  }, 1000);
 }
 </script>
 
